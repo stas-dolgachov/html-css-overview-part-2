@@ -85,28 +85,24 @@
 				</section>
 
 				<section>
-					<h2>Зачем нужны препроцессоры?</h2>
-					<aside class="notes">
-				        CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
-				    </aside>
+
+					<section>
+						<h2>Зачем нужны препроцессоры?</h2>
+						<aside class="notes">
+							CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
+						</aside>
+					</section>
+
+					<section>
+						<h3>Основная цель: Упростить жизнь разработчика</h3>
+					</section>
+
+
 				</section>
 
 				<section>
 					<h2>Как устроены препроцессоры?</h2>
 					<img src="img/preprocessors_to_css.svg" alt="preprocessors diagram">
-				</section>
-
-				<section>
-					<h2>CSS-препроцессоры</h2>
-					<ul class="center-text blue">
-						<li><strong>SASS(SCSS)</strong></li>
-						<li><strong>Less</strong></li>
-						<li><strong>Stylus</strong></li>
-						<li>Rework</li>
-						<li>cssnext</li>
-						<li>PostCSS (?????????)</li>
-						<li>...</li>
-					</ul>
 				</section>
 
 				<section>
@@ -301,62 +297,6 @@ button-background = #27adec
 						</code></pre>
 					</section>
 					<section>
-						<div class="cols">
-							<div class="col-2">
-							<h3>LESS и SCSS</h3>
-								<pre><code data-trim contenteditable>
-.nav {
-  margin: 0;
-
-  a {
-    color: #00f;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__item {
-    padding: 10px;
-    &:hover {
-      color: #fff;
-    }
-  }
-
-  .ie8 & {
-    padding: 20px;
-  }
-}
-								</code></pre>
-							</div>
-							<div class="col-2">
-								<h3>CSS</h3>
-									<pre><code data-trim contenteditable>
-.nav{
-  margin: 0;
-}
-
-.nav a {
-  color: #00f;
-}
-
-.nav a:hover {
-  text-decoration: underline;
-}
-
-.nav_item {
-  padding: 10px;
-}
-
-.nav_item:hover {
-  color: #fff;
-}
-
-.ie8 .nav {
-  padding: 20px;
-}
-								</code></pre>
-							</div>
-						</div>
 					</section>
 				</section>
 
@@ -448,8 +388,10 @@ bordered {
 					</section>
 
 					<section>
-						<h3>SCSS</h3>
-					<pre><code data-trim contenteditable>
+						<div class="co">
+							<div class="col-2">
+								<h3>SCSS</h3>
+								<pre><code data-trim contenteditable>
 @mixin transform-scale ($x: 2, $y: 2){
   -webkit-transform: scale($x, $y);
   transform: scale($x, $y);
@@ -459,6 +401,21 @@ bordered {
   @include transform-scale(2,3)
 }
 						</code></pre>
+							</div>
+
+							<div class="col-2">
+								<h3>CSS</h3>
+								<pre><code data-trim contenteditable>
+.main{
+  -webkit-transform: scale(2, 3);
+  transform: scale(2, 3);
+}
+						</code></pre>
+							</div>
+
+						</div>
+
+
 					</section>
 
 					<section>
@@ -1214,13 +1171,14 @@ for icon-name, icon-keycode in icons {
 				</section>
 
 				<section>
-					<h2>Минусы препроцессоров</h2>
-				</section>
+					<section>
+						<h2>Минусы препроцессоров</h2>
+					</section>
 
-				<section>
-					<h2>Ваш код нельзя запускать в браузере без процессинга</h2>
+					<section>
+						<h2>Ваш код нельзя запускать в браузере без процессинга</h2>
 
-					<pre>
+						<pre>
 						<code data-trim contenteditable>
 .accordion {
   $accordion-header-color: $primary-color;
@@ -1235,15 +1193,15 @@ for icon-name, icon-keycode in icons {
 
 						</code>
 					</pre>
-				</section>
+					</section>
 
-				<section>
-					<h2>Могут тормозить развитие CSS</h2>
-				</section>
+					<section>
+						<h2>Могут тормозить развитие CSS</h2>
+					</section>
 
-				<section>
-					<h2>Иногда могут все усложнять</h2>
-					<pre>
+					<section>
+						<h2>Иногда могут все усложнять</h2>
+						<pre>
 						<code data-trim contenteditable>
 &__moon{
 	& .forecast-extra-info__logo {
@@ -1259,6 +1217,7 @@ for icon-name, icon-keycode in icons {
 						</code>
 					</pre>
 
+					</section>
 				</section>
 
 				<section>
@@ -1281,7 +1240,67 @@ for icon-name, icon-keycode in icons {
 					</div>
 				</section>
 
+				<section>
+					<section>
+						<h2>Как устроен PostCSS?</h2>
+					</section>
 
+					<section>
+						<img src="img/post_css.svg" alt="postcss diagram">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Что можно делать с помощью PostCSS?</h3>
+						<ol>
+							<li>Полифиллы</li>
+							<li>Поддержка старых браузеров</li>
+							<li>Расширения языка</li>
+							<li>Оптимизация</li>
+							<li>Синтаксический сахар</li>
+							<li>Аналитика</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2>более 90 плагинов</h2>
+					</section>
+
+					<section>
+						<a href="https://twitter.com/pepelsbey/status/663131603342893056?ref_src=twsrc%5Etfw&ref_url=http%3A%2F%2Fcakeinpanic.github.io%2Fhackathon%2F">
+							<img src="img/makeev.png" alt="макеев твит">
+						</a>
+					</section>
+
+					<section>
+						<h2>Вы всегда можете написать плагин сами!</h2>
+					</section>
+
+					<section>
+						<h3>Использование</h3>
+
+						<pre><code data-trim contenteditable>
+var postcss = require('postcss');
+
+postcss([
+  require('autoprefixer'),
+  require('stylelint')({
+  syntax: 'scss'
+  })
+])
+.process(css)
+.then(result => console.log(result.css))
+
+					</code></pre>
+					</section>
+
+				</section>
+
+				<section>
+					<h3>With great power comes great responsibility</h3>
+					<img src="img/great_power.jpg" alt="Spider-man standing on the roof">
+				</section>
 
 				<section>
 					<h2>Ссылки:</h2>
@@ -1291,6 +1310,9 @@ for icon-name, icon-keycode in icons {
 						<li><a href="http://lesscss.org/">Less</a></li>
 						<li><a href="http://csspre.com/compare/">Compare CSS Preprocessors</a></li>
 						<li><a href="http://sass-compatibility.github.io/">Sass compatibility</a></li>
+						<li><a href="http://postcss.org/">PostCSS</a></li>
+						<li><a href="https://habrahabr.ru/company/oleg-bunin/blog/310710/">Доклад создателя  PostCSS</a></li>
+						<li><a href="http://cakeinpanic.github.io/hackathon/">О том как писать  PostCSS плагины</a></li>
 					</ul>
 				</section>
 
@@ -1301,6 +1323,10 @@ for icon-name, icon-keycode in icons {
 						<li><a href="mailto:Stanislav_Dolgachov@epam.com">Stanislav_Dolgachov@epam.com</a></li>
 						<li>Skype: dolgachevs</li>
 					</ul>
+				</section>
+
+				<section>
+					<h1>Вопросы?</h1>
 				</section>
 			</div>
 		</div>
