@@ -229,71 +229,37 @@ button-background = #27adec
 				<section>
 					<section>
 						<h2>Вложенные селекторы</h2>
-						<h3>SASS</h3>
-						<pre><code data-trim contenteditable>
-.nav
-  margin: 0
-
-  a 
-    color: #00f
-
-    &:hover 
-      text-decoration: underline
-
-  &__item
-    padding: 10px
-
-    &:hover
-      color: #fff
-
-  .ie8 &
-    padding: 20px
-						</code></pre>
-					</section>
-					<section>
 						<h3>LESS и SCSS</h3>
 						<pre><code data-trim contenteditable>
-.nav {
-  margin: 0;
-
-  a {
-    color: #00f;
-    &:hover {
-      text-decoration: underline;
-    }
+.main-header {
+  &__text {
+    background-color: #fff;
   }
 
-  &__item {
+  &__controls {
     padding: 10px;
-    &:hover {
-      color: #fff;
-    }
   }
 
-  .ie8 & {
-    padding: 20px;
+  &__column {
+    margin: 10px;
   }
 }
 						</code></pre>
+
 					</section>
+
 					<section>
-						<h3>Stylus</h3>
+						<h3>CSS</h3>
 						<pre><code data-trim contenteditable>
-.nav
-  margin 0
-
-  a 
-    color #00f
-    &:hover 
-      text-decoration underline
-
-  &__item
-    padding 10px
-    &:hover
-      color #fff
-
-  .ie8 &
-    padding 20px
+.main-header__text {
+  background-color: #fff;
+}
+.main-header__controls {
+  padding: 10px;
+}
+.main-header__column {
+  margin: 10px;
+}
 						</code></pre>
 					</section>
 					<section>
