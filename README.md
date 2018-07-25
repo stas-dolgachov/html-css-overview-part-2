@@ -1,8 +1,7 @@
-# CSS-Preprocessors
+# html-css-overview-part-2
 
-Presentation for "CSS Preprocessors" lecture
+Presentation for "html-css-overview-part-2" lecture
 
-
-- [Watch the presentation](http://epam-front-end-school-lectures.github.io/CSS-Preprocessors/index.html#/)
-- [Download the presentation](https://github.com/epam-front-end-school-lectures/CSS-Preprocessors/archive/gh-pages.zip)
+- [Watch the presentation](https://stas-dolgachov.github.io/html-css-overview-part-2/)
+- [Download the presentation](https://github.com/stas-dolgachov/html-css-overview-part-2)
 
