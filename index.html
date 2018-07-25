@@ -43,7 +43,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-state="mainpage">
-					<h1>HTML & CSS overview, part 2</h1>
+					<h1>HTML & CSS, p. 2</h1>
 					<br>
 					<h3>Stanislav Dolgachov</h3>
 					<time datetime="2018-07-27">27 July, 2018</time>
@@ -69,105 +69,134 @@
 
 				<section data-state="agenda">
 					<h2>Agenda</h2>
-					<!--<ul>
+					<ul>
 						<li>
-							<h3>1. HTML overview</h3>
+							<h3>1. Pseudos</h3>
 						</li>
 
 						<li>
-							<h3>2. CSS overview</h3>
+							<h3>2. Grids</h3>
 						</li>
 
 						<li>
-							<h3>3. CSS block model</h3>
+							<h3>3. Pre-processors & PostCSS</h3>
+						</li>
+
+						<li>
+							<h3>4. Organizing CSS code</h3>
 						</li>
 
 						<li>
 							<h3 style="color: yellowgreen">-&#45;&#45;&#45;&#45;&#45;&#45;Coffee break&#45;&#45;&#45;&#45;&#45;&#45;</h3>
 						</li>
-
-						<li>
-							<h3>4. Positioning</h3>
-						</li>
-
-						<li>
-							<h3>5. CSS units</h3>
-						</li>
-
-						<li>
-							<h3>6. Browser compatibility</h3>
-						</li>
-
-						<li class="fragment"><h3 style="color: #1b91ff"><<<<<< Q&A >>>>>>>></h3></li>
-					</ul>-->
+					</ul>
 				</section>
 
 				<section>
-					<h2>Responsive Web Design</h2>
-					<ol>
+					<ul>
 						<li>
-							<h2 data-question="1">Viewport</h2>
+							<h3>5. Methodologies</h3>
 						</li>
+
 						<li>
-							<h2 data-question="2">Fluid grids</h2>
+							<h3>6. Adaptive/Responsive</h3>
 						</li>
+
 						<li>
-							<h2 data-question="3">Media queries</h2>
+							<h3>7. Sprites</h3>
 						</li>
+
 						<li>
-							<h2 data-question="4">Flexible images</h2>
+							<h3>8. Best&Bad practices</h3>
 						</li>
-					</ol>
+
+						<li><h3 style="color: #1b91ff"><<<<<< Q&A >>>>>>>></h3></li>
+					</ul>
 				</section>
 
-				<section data-state="rwd-image"></section>
+				<section>
+					<h1>Pseudos</h1>
+				</section>
 
 				<section>
-					<h2 data-question="1">Viewport</h2>
-					<div class="fragment">
-						<pre><code>
-<meta name="viewport" content="width=device-width">
-						</code></pre>
+					<h2>Pseudo-class</h2>
+
+					<div style="display: flex;">
+						<ul>
+							<li>:active</li>
+							<li>:any-link</li>
+							<li>:checked</li>
+							<li>:default</li>
+							<li>:disabled</li>
+							<li>:empty</li>
+							<li>:enabled</li>
+						</ul>
+
+						<ul>
+							<li>:first-child</li>
+							<li>:focus</li>
+							<li>:hover</li>
+							<li>:invalid</li>
+							<li>:last-child</li>
+							<li>:nth-child()</li>
+							<li>...</li>
+						</ul>
 					</div>
 				</section>
 
 				<section>
-					<h2 data-question="2">Fluid grid</h2>
-					<ul>
-						<li class="fragment">All dimension converting to percents</li>
-					</ul>
+					<h3>Example</h3>
+					<pre><code>
+selector:pseudo-class {
+  property: value;
+}
+
+div:hover {
+  background-color: #F89B4D;
+}
+						</code></pre>
 				</section>
 
 				<section>
-					<h2 data-question="3">@media</h2>
-					<ul>
-						<li class="fragment">Device type</li>
-						<li class="fragment">Dimension (min/max width or height)</li>
-						<li class="fragment">Pixel ratio</li>
-						<li class="fragment">Device orientation</li>
-						<li class="fragment">...and so on</li>
-					</ul>
+					<h2>Pseudo-element</h2>
+					<div style="display: flex;">
+						<ul>
+							<li>::after</li>
+							<li>::before</li>
+							<li>::cue</li>
+							<li>::first-letter</li>
+							<li>::first-line</li>
+						</ul>
+
+						<ul>
+							<li>::selection</li>
+							<li>::backdrop</li>
+							<li>::placeholder</li>
+							<li>::marker</li>
+							<li>...</li>
+						</ul>
+					</div>
 				</section>
 
 				<section>
-					<iframe height='300' scrolling='no' title='ENrJOm' src='//codepen.io/vend3tta/embed/ENrJOm/?height=300&theme-id=dark&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/ENrJOm/'>ENrJOm</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
-					</iframe>
-					<div class="fragment"><a href="https://www.w3.org/TR/css3-mediaqueries/" target="_blank">W3C Spec</a></div>
+					<h3>Example</h3>
+					<pre><code>
+selector::pseudo-element {
+  property: value;
+}
+
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
+}
+						</code></pre>
 				</section>
 
 				<section>
-					<iframe height='300' scrolling='no' title='WoPWaV' src='//codepen.io/vend3tta/embed/WoPWaV/?height=300&theme-id=dark&default-tab=html&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/WoPWaV/'>WoPWaV</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
-					</iframe>
-				</section>
-
-				<section>
-					<h2 data-question="4">Flexible images</h2>
-					<ul>
-						<li class="fragment">max-width: 100%;</li>
-						<li class="fragment">HTML5 <a href="https://www.w3.org/TR/html-picture-element/" target="_blank">&lt;picture&gt;</a> tag</li>
-						<li class="fragment">Icon fonts (e.g. <a href="fontawesome.io" target="_blank">Font Awesome</a>)</li>
-						<li class="fragment">SVG</li>
-					</ul>
+					<h2>CSS cascade</h2>
+					<img width="135%" src="img/selectors-sp.jpg" alt="selectors specificity">
+					<br>
+					<a target="_blank" href="https://codepen.io/Dolgach/pen/BPQWam">Try me</a>
 				</section>
 
 				<section>
@@ -349,7 +378,7 @@ button-background = #27adec
 					</section>
 					<section>
 						<h3>_reset.scss</h3>
-							<pre><code data-trim contenteditable>
+						<pre><code data-trim contenteditable>
 html,
 body,
 ul,
@@ -358,8 +387,8 @@ ol {
   padding: 0;
 }
 							</code></pre>
-							<h3>base.scss</h3>
-							<pre><code data-trim contenteditable>
+						<h3>base.scss</h3>
+						<pre><code data-trim contenteditable>
 @import 'reset';
 
 body {
@@ -368,7 +397,7 @@ body {
 }
 							</code></pre>
 					</section>
-					
+
 				</section>
 
 				<section>
@@ -419,7 +448,7 @@ bordered {
 					</section>
 					<section>
 						<h3>SASS</h3>
-					<pre><code data-trim contenteditable>
+						<pre><code data-trim contenteditable>
 =transform-scale($x: 2, $y: 2)
   -webkit-transform: scale($x, $y)
   transform: scale($x, $y)
@@ -462,7 +491,7 @@ bordered {
 
 					<section>
 						<h3>Stylus</h3>
-					<pre><code data-trim contenteditable>
+						<pre><code data-trim contenteditable>
 transform-scale (x, y)
   -webkit-transform scale(x, y)
   transform scale(x, y)
@@ -999,7 +1028,6 @@ $toast: (
 					<h3 class="fragment" style="margin-top: 2em;">YAGNI</h3>
 				</section>
 
-
 				<section>
 					<h1>Methodologies</h1>
 				</section>
@@ -1088,8 +1116,158 @@ $toast: (
 					<div><a href="https://ru.bem.info/" target="_blank">ru.bem.info</a></div>
 				</section>
 
-				<!--My slides end-->
+				<section>
+					<h2>Responsive Web Design</h2>
+					<ol>
+						<li>
+							<h2 data-question="1">Viewport</h2>
+						</li>
+						<li>
+							<h2 data-question="2">Fluid grids</h2>
+						</li>
+						<li>
+							<h2 data-question="3">Media queries</h2>
+						</li>
+						<li>
+							<h2 data-question="4">Flexible images</h2>
+						</li>
+					</ol>
+				</section>
 
+				<section data-state="rwd-image"></section>
+
+				<section>
+					<h2 data-question="1">Viewport</h2>
+					<div class="fragment">
+						<pre><code>
+<meta name="viewport" content="width=device-width">
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h2 data-question="2">Fluid grid</h2>
+					<ul>
+						<li class="fragment">All dimension converting to percents</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2 data-question="3">@media</h2>
+					<ul>
+						<li class="fragment">Device type</li>
+						<li class="fragment">Dimension (min/max width or height)</li>
+						<li class="fragment">Pixel ratio</li>
+						<li class="fragment">Device orientation</li>
+						<li class="fragment">...and so on</li>
+					</ul>
+				</section>
+
+				<section>
+					<iframe height='300' scrolling='no' title='ENrJOm' src='//codepen.io/vend3tta/embed/ENrJOm/?height=300&theme-id=dark&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/ENrJOm/'>ENrJOm</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
+					</iframe>
+					<div class="fragment"><a href="https://www.w3.org/TR/css3-mediaqueries/" target="_blank">W3C Spec</a></div>
+				</section>
+
+				<section>
+					<iframe height='300' scrolling='no' title='WoPWaV' src='//codepen.io/vend3tta/embed/WoPWaV/?height=300&theme-id=dark&default-tab=html&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/WoPWaV/'>WoPWaV</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h2 data-question="4">Flexible images</h2>
+					<ul>
+						<li class="fragment">max-width: 100%;</li>
+						<li class="fragment">HTML5 <a href="https://www.w3.org/TR/html-picture-element/" target="_blank">&lt;picture&gt;</a> tag</li>
+						<li class="fragment">Icon fonts (e.g. <a href="fontawesome.io" target="_blank">Font Awesome</a>)</li>
+						<li class="fragment">SVG</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Sprites</h1>
+					<blockquote class="question">Do we need to use sprites? Are there any issues using them?</blockquote>
+				</section>
+
+				<section>
+					<h3><span class="coloured-symbols coloured-symbols_blue">Yes</span>, you need</h3>
+					<div>until HTTP/2 will be everywhere</div>
+				</section>
+
+				<section>
+					<h3>Browser Limits</h3>
+					<div class="fragment" style="font-size:.8em">
+						<img src="img/concurent-connections.png" alt="concurrent connections in browser">
+						<div>2018</div>
+					</div>
+				</section>
+
+				<section>
+					<h3>What is sprite?</h3>
+				</section>
+
+				<section data-state="sprite-example"></section>
+
+				<section data-state="sprite-example-2"></section>
+
+				<section data-state="sprite-youtube"></section>
+
+				<section>
+					<img src="assets/i/sprite-social.png" alt="">
+				</section>
+
+				<section>
+					<iframe height='500' scrolling='no' title='xRMBvZ' src='//codepen.io/vend3tta/embed/xRMBvZ/?height=500&theme-id=dark&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/vend3tta/pen/xRMBvZ/'>xRMBvZ</a> by vend3tta (<a href='http://codepen.io/vend3tta'>@vend3tta</a>) on <a href='http://codepen.io'>CodePen</a>.
+					</iframe>
+				</section>
+
+				<section>
+					<h3>Nowadays</h3>
+					<ul>
+						<li class="fragment">Due to retina displays, <strong>SVG</strong> sprites are preferrable</li>
+						<li class="fragment">A lot of tools for automation build process, e.g. <a href="https://github.com/gobwas/gulp-sprite-generator" target="_blank">gulp-sprite-generator</a> for Gulp</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Bad <span class="coloured-symbols coloured-symbols_blue">practices</span></h3>
+					<ul>
+						<li class="fragment">Inline styles</li>
+						<li class="fragment">!important</li>
+						<li class="fragment">ID selectors (and tag selectors, as much as possible)</li>
+						<li class="fragment">Huge selectors or cascades</li>
+						<li class="fragment">Extra elements in markup</li>
+						<li class="fragment">Things that aren't clear or obvious</li>
+						<li class="fragment">Transliteration and shortens in class names</li>
+						<li class="fragment">Sophisticated pre-processors code</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Best <span class="coloured-symbols coloured-symbols_blue">practices</span></h3>
+					<ul>
+						<li class="fragment">Minify amount of static files on page</li>
+						<li class="fragment">Include CSS files in the &lt;head&gt;; JS &mdash; before &lt;/body&gt;</li>
+						<li class="fragment">Use tags according to their purpose (Semantic)</li>
+						<li class="fragment">Write and keep your code clean and REFACTOR it</li>
+						<li class="fragment">Use source maps</li>
+						<li class="fragment">Use CSS Preprocessor / CSS Postprocessor</li>
+						<li class="fragment">Use methodology (BEM)</li>
+						<li class="fragment">Use component based approach</li>
+					</ul>
+				</section>
+
+				<section data-state="thank-you">
+					<h2 class="coloured-symbols coloured-symbols_blue">Thank you</h2>
+					<div>Questions?</div>
+				</section>
+
+				<section data-state="thank-you">
+					<h3 class="coloured-symbols coloured-symbols_blue">Homework</h3>
+					<img src="img/homework.jpeg" alt="after lecture homework">
+				</section>
+
+				<!--My slides end-->
 			</div>
 		</div>
 
