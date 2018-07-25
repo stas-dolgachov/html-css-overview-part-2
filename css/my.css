@@ -252,7 +252,7 @@ body .slide-background {
 	}
 }
 
-.reveal h1 {
+/*.reveal h1 {
 	color: rgba(255,255,255,.95);
 	text-shadow: 0 2px 4px rgba(0,0,0,.5),
 	0 -1px 3px rgba(0,0,0,.5);
@@ -261,7 +261,7 @@ body .slide-background {
 .reveal h1::before,
 .reveal h1::after {
 	content: "";
-}
+}*/
 
 .mainpage .reveal h3 {
 	text-shadow: 0 1px 3px rgba(0,0,0,.5),
@@ -345,120 +345,6 @@ body .slide-background {
 	background: url(../img/mainpage-bg.jpg);
 	background-repeat: no-repeat;
 }
-/*
-!* Backgrounds *!
-
-.mainpage .slide-background {
-	background: url(../img/mainpage-bg.jpg);
-	background-repeat: no-repeat;
-}
-
-.bg-2001 .slide-background {
-	background: url(../img/2001-bg.jpg);
-	background-size: cover;
-}
-
-.bg-2016 .slide-background {
-	background: url(../img/2016-bg.jpg);
-	background-size: cover;
-}
-
-.rd-labs-before-bg .slide-background {
-	background: url(../img/lost-ship.png);
-	background-size: cover;
-	background-position: center;
-}
-
-.rd-labs-before-bg .slide-background::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,.5);
-}
-
-.rd-labs-nowadays-bg .slide-background {
-	background: url(../img/super-ship.jpg);
-	background-size: cover;
-	background-position: center;
-}
-
-!*.rd-labs-nowadays-bg .slide-background::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(255,255,255,.3);
-}*!
-
-.rd-students-collage .slide-background {
-	background: url(../img/epamers.jpg) center repeat;
-	background-size: contain;
-}
-
-.rd-students-stat .slide-background {
-	background: url(../img/epamers.jpg) center repeat;
-	background-size: contain;
-}
-
-.rd-students-stat .slide-background::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(255,255,255,.85);
-}
-
-!* Slides *!
-
-.cources-types-list {
-	width: 100%;
-	margin-top: 100px;
-}
-
-.cources-types-item {
-	display: inline-block;
-	width: 25%;
-	vertical-align: top;
-	text-align: center;
-}
-
-.cources-types-item__image {
-	max-width: 75% !important;
-	margin-bottom: 20px;
-}
-
-.fe-labs-cources-types-list {
-	width: 100%;
-	text-align: center;
-}
-
-.fe-labs-cources-types-item {
-	display: inline-block;
-	width: 33%;
-	vertical-align: bottom;
-}
-
-.fe-labs-cources-types-item__image {
-	max-width: 75% !important;
-}
-
-.rd-labs-before-bg h2 {
-	color: #fff;
-}
-
-.rd-labs-nowadays-bg h2 {
-	color: #fff;
-	text-shadow: 0 2px 4px rgba(0,0,0,.6),
-						   0 -1px 4px rgba(0,0,0,.6);
-}
-*/
 
 .reveal h2 i {
 	font-size: .25em;
@@ -499,4 +385,24 @@ pre .variable {
 
 span.value {
 	color: #008000 !important;
+}
+
+.reveal li {
+	margin: 0.5em 0;
+}
+.reveal pre {
+	margin-bottom: 30px;
+	width: 100%;
+}
+.cols {
+	overflow: hidden;
+}
+.col-2 {
+	float: left;
+	width: 50%;
+}
+
+.center-text, ul.center-text, .center-text li {
+	text-align: center;
+	list-style: none;
 }
