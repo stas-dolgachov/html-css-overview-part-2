@@ -995,6 +995,97 @@ $toast: (
 				<section>
 					<h2>Reusing code</h2>
 					<h3 class="fragment" style="margin-top: 2em;">DRY</h3>
+					<h3 class="fragment" style="margin-top: 2em;">KISS</h3>
+					<h3 class="fragment" style="margin-top: 2em;">YAGNI</h3>
+				</section>
+
+
+				<section>
+					<h1>Methodologies</h1>
+				</section>
+
+				<section>
+					<h2>Big-medium size projects problems</h2>
+					<ol>
+						<li>
+							<h3>Styles <span class="coloured-symbols coloured-symbols_blue">encapsulation</span></h3>
+						</li>
+
+						<li>
+							<h3>Code <span class="coloured-symbols coloured-symbols_blue">reuse</span></h3>
+						</li>
+
+						<li>
+							<h3><span class="coloured-symbols coloured-symbols_blue">Fragility</span> od CSS code (cascades, dependencies...)</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h3>Imagine everything on page is <span class="coloured-symbols coloured-symbols_blue">block</span></h3>
+				</section>
+
+				<section data-state="everything-is-block">
+					<h2>Everything is block</h2>
+				</section>
+
+				<section>
+					<div>Most known and popular of them are</div>
+					<ul class="methodologies-list">
+						<li class="fragment">
+							<h3>BEM</h3>
+							<div><span class="coloured-symbols coloured-symbols_blue">B</span>lock
+								<span class="coloured-symbols coloured-symbols_blue">E</span>lement
+								<span class="coloured-symbols coloured-symbols_blue">M</span>odifier
+							</div>
+						</li>
+						<li class="fragment">
+							<h3>SMACSS</h3>
+							<div><span class="coloured-symbols coloured-symbols_blue">S</span>calable
+								and
+								<span class="coloured-symbols coloured-symbols_blue">M</span>odular
+								<span class="coloured-symbols coloured-symbols_blue">A</span>rchitecture
+								for
+								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
+							</div>
+						</li>
+						<li class="fragment">
+							<h3>OOCSS</h3>
+							<div>
+								<span class="coloured-symbols coloured-symbols_blue">O</span>bject
+								<span class="coloured-symbols coloured-symbols_blue">O</span>riented
+								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
+							</div>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="toast-design"></section>
+
+				<section>
+					<h3>BEM Example</h3>
+					<pre><code class="xml">
+<div class="toast">
+    <div class="toast-item toast-item_critical">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% text-critical %></div>
+    </div>
+
+    <div class="toast-item toast-item_warning">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% text-warning %></div>
+    </div>
+
+    <div class="toast-item toast-item_info">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% test-info %></div>
+    </div>
+</div>
+					</code></pre>
+				</section>
+
+				<section>
+					<div><a href="https://ru.bem.info/" target="_blank">ru.bem.info</a></div>
 				</section>
 
 				<!--My slides end-->
