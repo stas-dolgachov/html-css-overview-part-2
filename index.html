@@ -840,7 +840,164 @@ postcss([
 					<img src="img/great_power.jpg" alt="Spider-man standing on the roof">
 				</section>
 
-				<!--My slide end-->
+				<section>
+					<h1>Organizing <span class="coloured-symbols coloured-symbols_blue">CSS</span> Code</h1>
+				</section>
+
+				<section>
+					<div style="font-style:italic;">Sooner or later...</div>
+				</section>
+
+				<section data-state="wtfcode"></section>
+
+				<section>
+					<h2>How to?</h2>
+				</section>
+
+				<section data-state="css-organizing-project-css"></section>
+
+				<section>
+					<h4>main.scss</h4>
+					<pre><code>
+@import '_variables';
+@import '_mixins';
+@import '_fonts';
+
+@import 'blocks/_common';
+@import 'blocks/_layout';
+
+...
+
+@import '_themes';
+					</code></pre>
+				</section>
+
+				<section>
+					<h4>variables.scss</h4>
+					<pre><code style="font-size:.6em">
+// Fonts
+
+$font-roboto-regular: 'roboto-regular', Tahoma, sans-serif;
+$font-roboto-regularitalic: 'roboto-regularitalic', Tahoma, sans-serif;
+...
+
+// Paths
+
+$image-path: '../../img/';
+
+// Colors
+
+$black: #000;
+$white: #fff;
+...
+
+// Layout
+
+$layout: (
+	header: (
+		background-color: #f5f6f8
+	),
+	left-sidebar: (
+		z-index: 100,
+		width: 150px,
+		background-color: #0a2756
+	),
+	right-sidebar: (
+		z-index: 80,
+		background-color: rgba($black, .2)
+	),
+	grid: (
+		columns-amount: 4
+	)
+);
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>Block level variables</h3>
+				</section>
+
+				<section data-state="toast-design"></section>
+
+				<section>
+					<div class="coloured-symbols coloured-symbols_blue">variables.scss</div>
+					<pre><code>
+// Toasts
+
+$toast: (
+	close-icon-color: #96a4b8,
+	background-color: #f5f6f8,
+	info: (
+		border-color: #0082ff,
+		color: #00519f
+	),
+	warning: (
+		border-color: #ffb200,
+		color: #b98301
+	),
+	critical: (
+		border-color: #f23e36,
+		color: #800000
+	)
+);
+					</code></pre>
+				</section>
+
+				<section>
+					<div class="coloured-symbols coloured-symbols_blue">toast.scss</div>
+					<pre><code style="font-size:.5em">
+.toast {
+
+	&-item {
+		position: relative;
+		display: table; // for content alignment
+		box-sizing: border-box;
+		width: 650px;
+		min-height: 60px;
+		margin: 30px auto;
+		padding: 10px 50px 10px 15px;
+		border-left: 3px solid;
+		background: map-get($toast, background-color);
+
+		&__close {
+			position: absolute;
+			top: 50%;
+			right: 17px;
+			transform: translateY(-50%);
+			color: map-get($toast, close-icon-color);
+			}
+
+		&__content {
+			display: inline-block;
+			vertical-align: middle;
+			font-family: $font-roboto-light;
+			}
+
+		&_critical {
+			border-left-color: map-get(map-get($toast, critical), border-color);
+			color: map-get(map-get($toast, critical), color);
+			}
+
+		&_warning {
+			border-left-color: map-get(map-get($toast, warning), border-color);
+			color: map-get(map-get($toast, warning), color);
+			}
+
+		&_info {
+			border-left-color: map-get(map-get($toast, info), border-color);
+			color: map-get(map-get($toast, info), color);
+			}
+		}
+	}
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Reusing code</h2>
+					<h3 class="fragment" style="margin-top: 2em;">DRY</h3>
+				</section>
+
+				<!--My slides end-->
 
 			</div>
 		</div>
