@@ -83,7 +83,7 @@
 						</li>
 
 						<li>
-							<h3>4. Organizing CSS code</h3>
+							<h3>4. Methodologies</h3>
 						</li>
 
 						<li>
@@ -95,7 +95,7 @@
 				<section>
 					<ul>
 						<li>
-							<h3>5. Methodologies</h3>
+							<h3>5. Organizing CSS code</h3>
 						</li>
 
 						<li>
@@ -116,6 +116,19 @@
 
 				<section>
 					<h1>Pseudos</h1>
+				</section>
+
+				<section>
+					<h3>Example</h3>
+					<pre><code>
+selector:pseudo-class {
+  property: value;
+}
+
+div:hover {
+  background-color: #F89B4D;
+}
+						</code></pre>
 				</section>
 
 				<section>
@@ -147,12 +160,13 @@
 				<section>
 					<h3>Example</h3>
 					<pre><code>
-selector:pseudo-class {
+selector::pseudo-element {
   property: value;
 }
 
-div:hover {
-  background-color: #F89B4D;
+p::first-line {
+  color: blue;
+  text-transform: uppercase;
 }
 						</code></pre>
 				</section>
@@ -176,20 +190,6 @@ div:hover {
 							<li>...</li>
 						</ul>
 					</div>
-				</section>
-
-				<section>
-					<h3>Example</h3>
-					<pre><code>
-selector::pseudo-element {
-  property: value;
-}
-
-p::first-line {
-  color: blue;
-  text-transform: uppercase;
-}
-						</code></pre>
 				</section>
 
 				<section>
@@ -322,19 +322,6 @@ body
   font-size 100% Helvetica, sans-serif
 					</code></pre>
 					<p>Stylus supports all of them</p>
-				</section>
-
-				<section>
-					<h2>Similar features</h2>
-					<ul class="center-text blue">
-						<li class="fragment">Variables</li>
-						<li class="fragment">Nested selectors</li>
-						<li class="fragment">Imports</li>
-						<li class="fragment">Calculation</li>
-						<li class="fragment">Mixins</li>
-						<li class="fragment">Color functions</li>
-						<li class="fragment">Conditions and loops</li>
-					</ul>
 				</section>
 
 				<section>
@@ -595,166 +582,6 @@ lightness(color);
 
 				<section>
 					<section>
-						<h2>Media Queries</h2>
-						<h3>SCSS</h3>
-						<pre><code data-trim contenteditable>
-$small-breakpoint: 480px;
-$medium-breakpoint: 768px;
-$large-breakpoint: 1024px;
-
-aside {
-  width: 100%;
-  @media  (min-width: $small-breakpoint) {
-    width: 100px;
-    float: right;
-  }
-  @media (min-width: $medium-breakpoint) {
-    width: 200px;
-  }
-  @media (min-width: $large-breakpoint) {
-    width: 400px;
-  }
-}
-						</code></pre>
-					</section>
-					<section>
-						<h3>Less</h3>
-						<pre><code data-trim contenteditable>
-@small-breakpoint: 480px;
-@medium-breakpoint: 768px;
-@large-breakpoint: 1024px;
-
-aside {
-  width: 100%;
-
-  @media (min-width: @small-breakpoint) {
-    width: 100px;
-    float: right;
-  }
-
-  @media (min-width: @medium-breakpoint) {
-    width: 200px;
-  }
-
-  @media (min-width: @large-breakpoint) {
-    width: 400px;
-  }
-}
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>Stylus</h3>
-						<pre><code data-trim contenteditable>
-ll-breakpoint 480px
-medium-breakpoint 768px
-large-breakpoint 1024px
-
-aside
-  width 100%
-
- @media (min-width small-breakpoint)
-  width 100px
-  float right
-
- @media (min-width medium-breakpoint)
-  width 200px
-
- @media (min-width large-breakpoint)
-  width 400px
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>CSS</h3>
-						<pre><code data-trim contenteditable>
-aside {
-  width: 100%;
-}
-
-@media (min-width: 480px) {
-  aside {
-    width: 100px;
-    float: right;
-  }
-}
-
-@media (min-width: 768px) {
-  aside {
-    width: 200px;
-  }
-}
-
-@media (min-width: 1024px) {
-  aside {
-    width: 400px;
-  }
-}
-						</code></pre>
-					</section>
-
-					<section>
-						<h3>@content – Sass</h3>
-						<pre><code data-trim contenteditable>
-=respond-to($name)
-  @if $name == small-screen
-    @media (min-width: 320px)
-      @content
-  @if $name == large-screen
-    @media (min-width: 960px)
-      @content
-
-aside
-  width: 25%
-  +respond-to(small-screen)
-    width: 100%
-
-						</code></pre>
-					</section>
-					<section>
-						<h3>@content – Scss</h3>
-						<pre><code data-trim contenteditable>
-@mixin respond-to($name) {
-  @if $name == small-screen {
-    @media (min-width: 320px) {
-      @content;
-    }
-  }
-  @if $name == large-screen {
-    @media (min-width: 960px) {
-      @content;
-    }
-  }
-}
-
-aside {
-  width: 25%;
-  @include respond-to(small-screen) {
-    width: 100%;
-  }
-}
-
-						</code></pre>
-					</section>
-					<section>
-						<h3>css</h3>
-						<pre><code data-trim contenteditable>
-aside {
-  width: 25%;
-}
-
-@media (min-width: 320px) {
-  aside {
-    width: 100%;
-  }
-}
-
-						</code></pre>
-					</section>
-				</section>
-
-				<section>
-					<section>
 						<h2>Pre-processors drawbacks</h2>
 					</section>
 
@@ -878,6 +705,86 @@ postcss([
 				</section>
 
 				<section>
+					<h1>Methodologies</h1>
+				</section>
+
+				<section>
+					<h2>Big-medium size projects problems</h2>
+					<ol>
+						<li>
+							<h3>Styles <span class="coloured-symbols coloured-symbols_blue">encapsulation</span></h3>
+						</li>
+
+						<li>
+							<h3>Code <span class="coloured-symbols coloured-symbols_blue">reuse</span></h3>
+						</li>
+
+						<li>
+							<h3><span class="coloured-symbols coloured-symbols_blue">Fragility</span> of CSS code (cascades, dependencies...)</h3>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<div>Most known and popular of them are</div>
+					<ul class="methodologies-list">
+						<li class="fragment">
+							<h3>BEM</h3>
+							<div><span class="coloured-symbols coloured-symbols_blue">B</span>lock
+								<span class="coloured-symbols coloured-symbols_blue">E</span>lement
+								<span class="coloured-symbols coloured-symbols_blue">M</span>odifier
+							</div>
+						</li>
+						<li class="fragment">
+							<h3>SMACSS</h3>
+							<div><span class="coloured-symbols coloured-symbols_blue">S</span>calable
+								and
+								<span class="coloured-symbols coloured-symbols_blue">M</span>odular
+								<span class="coloured-symbols coloured-symbols_blue">A</span>rchitecture
+								for
+								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
+							</div>
+						</li>
+						<li class="fragment">
+							<h3>OOCSS</h3>
+							<div>
+								<span class="coloured-symbols coloured-symbols_blue">O</span>bject
+								<span class="coloured-symbols coloured-symbols_blue">O</span>riented
+								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
+							</div>
+						</li>
+					</ul>
+				</section>
+
+				<section data-state="toast-design"></section>
+
+				<section>
+					<h3>BEM Example</h3>
+					<pre><code class="xml">
+<div class="toast">
+    <div class="toast-item toast-item_critical">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% text-critical %></div>
+    </div>
+
+    <div class="toast-item toast-item_warning">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% text-warning %></div>
+    </div>
+
+    <div class="toast-item toast-item_info">
+        <span class="toast-item__close"></span>
+        <div class="toast-item__content"><% test-info %></div>
+    </div>
+</div>
+					</code></pre>
+				</section>
+
+				<section>
+					<div><a href="https://ru.bem.info/" target="_blank">ru.bem.info</a></div>
+				</section>
+
+				<section>
 					<h1>Organizing <span class="coloured-symbols coloured-symbols_blue">CSS</span> Code</h1>
 				</section>
 
@@ -951,85 +858,6 @@ $layout: (
 				</section>
 
 				<section>
-					<h3>Block level variables</h3>
-				</section>
-
-				<section data-state="toast-design"></section>
-
-				<section>
-					<div class="coloured-symbols coloured-symbols_blue">variables.scss</div>
-					<pre><code>
-// Toasts
-
-$toast: (
-	close-icon-color: #96a4b8,
-	background-color: #f5f6f8,
-	info: (
-		border-color: #0082ff,
-		color: #00519f
-	),
-	warning: (
-		border-color: #ffb200,
-		color: #b98301
-	),
-	critical: (
-		border-color: #f23e36,
-		color: #800000
-	)
-);
-					</code></pre>
-				</section>
-
-				<section>
-					<div class="coloured-symbols coloured-symbols_blue">toast.scss</div>
-					<pre><code style="font-size:.5em">
-.toast {
-
-	&-item {
-		position: relative;
-		display: table; // for content alignment
-		box-sizing: border-box;
-		width: 650px;
-		min-height: 60px;
-		margin: 30px auto;
-		padding: 10px 50px 10px 15px;
-		border-left: 3px solid;
-		background: map-get($toast, background-color);
-
-		&__close {
-			position: absolute;
-			top: 50%;
-			right: 17px;
-			transform: translateY(-50%);
-			color: map-get($toast, close-icon-color);
-			}
-
-		&__content {
-			display: inline-block;
-			vertical-align: middle;
-			font-family: $font-roboto-light;
-			}
-
-		&_critical {
-			border-left-color: map-get(map-get($toast, critical), border-color);
-			color: map-get(map-get($toast, critical), color);
-			}
-
-		&_warning {
-			border-left-color: map-get(map-get($toast, warning), border-color);
-			color: map-get(map-get($toast, warning), color);
-			}
-
-		&_info {
-			border-left-color: map-get(map-get($toast, info), border-color);
-			color: map-get(map-get($toast, info), color);
-			}
-		}
-	}
-					</code></pre>
-				</section>
-
-				<section>
 					<h2>Reusing code</h2>
 					<h3 class="fragment" style="margin-top: 2em;">DRY</h3>
 					<h3 class="fragment" style="margin-top: 2em;">KISS</h3>
@@ -1037,109 +865,7 @@ $toast: (
 				</section>
 
 				<section>
-					<h1>Methodologies</h1>
-				</section>
-
-				<section>
-					<h2>Big-medium size projects problems</h2>
-					<ol>
-						<li>
-							<h3>Styles <span class="coloured-symbols coloured-symbols_blue">encapsulation</span></h3>
-						</li>
-
-						<li>
-							<h3>Code <span class="coloured-symbols coloured-symbols_blue">reuse</span></h3>
-						</li>
-
-						<li>
-							<h3><span class="coloured-symbols coloured-symbols_blue">Fragility</span> od CSS code (cascades, dependencies...)</h3>
-						</li>
-					</ol>
-				</section>
-
-				<section>
-					<h3>Imagine everything on page is <span class="coloured-symbols coloured-symbols_blue">block</span></h3>
-				</section>
-
-				<section data-state="everything-is-block">
-					<h2>Everything is block</h2>
-				</section>
-
-				<section>
-					<div>Most known and popular of them are</div>
-					<ul class="methodologies-list">
-						<li class="fragment">
-							<h3>BEM</h3>
-							<div><span class="coloured-symbols coloured-symbols_blue">B</span>lock
-								<span class="coloured-symbols coloured-symbols_blue">E</span>lement
-								<span class="coloured-symbols coloured-symbols_blue">M</span>odifier
-							</div>
-						</li>
-						<li class="fragment">
-							<h3>SMACSS</h3>
-							<div><span class="coloured-symbols coloured-symbols_blue">S</span>calable
-								and
-								<span class="coloured-symbols coloured-symbols_blue">M</span>odular
-								<span class="coloured-symbols coloured-symbols_blue">A</span>rchitecture
-								for
-								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
-							</div>
-						</li>
-						<li class="fragment">
-							<h3>OOCSS</h3>
-							<div>
-								<span class="coloured-symbols coloured-symbols_blue">O</span>bject
-								<span class="coloured-symbols coloured-symbols_blue">O</span>riented
-								<span class="coloured-symbols coloured-symbols_blue">CSS</span>
-							</div>
-						</li>
-					</ul>
-				</section>
-
-				<section data-state="toast-design"></section>
-
-				<section>
-					<h3>BEM Example</h3>
-					<pre><code class="xml">
-<div class="toast">
-    <div class="toast-item toast-item_critical">
-        <span class="toast-item__close"></span>
-        <div class="toast-item__content"><% text-critical %></div>
-    </div>
-
-    <div class="toast-item toast-item_warning">
-        <span class="toast-item__close"></span>
-        <div class="toast-item__content"><% text-warning %></div>
-    </div>
-
-    <div class="toast-item toast-item_info">
-        <span class="toast-item__close"></span>
-        <div class="toast-item__content"><% test-info %></div>
-    </div>
-</div>
-					</code></pre>
-				</section>
-
-				<section>
-					<div><a href="https://ru.bem.info/" target="_blank">ru.bem.info</a></div>
-				</section>
-
-				<section>
 					<h2>Responsive Web Design</h2>
-					<ol>
-						<li>
-							<h2 data-question="1">Viewport</h2>
-						</li>
-						<li>
-							<h2 data-question="2">Fluid grids</h2>
-						</li>
-						<li>
-							<h2 data-question="3">Media queries</h2>
-						</li>
-						<li>
-							<h2 data-question="4">Flexible images</h2>
-						</li>
-					</ol>
 				</section>
 
 				<section data-state="rwd-image"></section>
@@ -1242,7 +968,7 @@ $toast: (
 					<ul>
 						<li class="fragment">Inline styles</li>
 						<li class="fragment">!important</li>
-						<li class="fragment">ID selectors (and tag selectors, as much as possible)</li>
+						<li class="fragment">ID selectors (and tag selectors)</li>
 						<li class="fragment">Huge selectors or cascades</li>
 						<li class="fragment">Extra elements in markup</li>
 						<li class="fragment">Things that aren't clear or obvious</li>
