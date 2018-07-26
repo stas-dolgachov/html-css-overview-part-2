@@ -278,6 +278,7 @@ body .slide-background {
 }
 
 .css-organizing-project-css .slide-background {
+	background-color: lightblue;
 	background-image: url(../img/project-css.png);
 	background-position: center;
 	background-repeat: no-repeat !important;
